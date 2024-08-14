@@ -7,7 +7,7 @@
 :: =================================================================================================
 
 REM Available Arguments:
-REM [64|32] Bit Architecture (optional, 64 is default)
+REM [64|32|arm64] Bit Architecture (optional, 64 is default)
 REM [2008|2011|2011|2015|2017|2019] VS Version(optional, 2022 is default)
 REM [Dynamic | Static] optional, Dynamic by default
 REM [WarningAsError] optional
@@ -81,7 +81,13 @@ set CMake_LibTypeFolderName=dynamic
 	set CMake_Arch64Bit=ON
 	set CMake_ARCH=x64
 	)
-	
+
+	if /I "%1"=="arm64" (
+	echo 64 bit specified with ARM
+	set CMake_Arch64Bit=ON
+	set CMake_ARCH=ARM64
+	)
+
 	shift
 	goto Loop
 
