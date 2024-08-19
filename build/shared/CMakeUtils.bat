@@ -65,6 +65,12 @@ set CMake_LibTypeFolderName=dynamic
 	set CMakeGenVersion_FolderSuffix=
 	)
 
+	if /I "%1"=="2019" (
+	echo "Generator VS 2019 specified"
+	set GeneratorVersion=Visual Studio 16 2019
+	set CMakeGenVersion_FolderSuffix=
+	)
+
 	if /I "%1"=="WarningAsError" (
 	echo "sensible warnings activated"
 	set CMake_Build_Warning_As_Error=On
