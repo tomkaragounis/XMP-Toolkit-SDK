@@ -81,6 +81,13 @@ set CMake_LibTypeFolderName=dynamic
 	set CMake_Arch64Bit=ON
 	set CMake_ARCH=x64
 	)
+
+	if /I "%1"=="arm64" (
+	echo "arm64 specified"
+	set CMake_Arch64Bit=ON
+	set CMake_ARCH=ARM64
+	set GeneratorArchitecture=ARM64
+	)
 	
 	shift
 	goto Loop
@@ -88,9 +95,13 @@ set CMake_LibTypeFolderName=dynamic
 :EndLoop
 
 if "%CMake_Arch64Bit%"=="ON" (
-set CMake64_Folder_Suffix=_x64
+	if "%CMake_ARCH%"=="ARM64" (
+		set CMake64_Folder_Suffix=_ARM64
+	) else (
+		set CMake64_Folder_Suffix=_x64
+	)
 ) else (
-set CMake64_Folder_Suffix=
+	set CMake64_Folder_Suffix=
 )
 
 :: CMake Folder specified:
