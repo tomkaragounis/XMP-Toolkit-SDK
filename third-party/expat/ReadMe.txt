@@ -2,13 +2,13 @@ The XMP Toolkit needs an external XML parser. The source from Adobe is written t
 
 although adapters for other parsers can easily be written. The most recent version of Expat used
 
-with XMP is 2.5.0. To use Expat:
+with XMP is 2.7.1. To use Expat:
 
 
 
 1. Obtain a copy of the Expat distribution. One good place is SourceForge:
 
-	http://sourceforge.net/projects/expat/files/expat/2.5.0/
+	http://sourceforge.net/projects/expat/files/expat/2.7.1/
 
 
 
@@ -16,27 +16,17 @@ with XMP is 2.5.0. To use Expat:
 
 
 
-For Expat version 2.4.7 the contents of .../third-party/expat/lib are:
+For Expat version 2.7.1 the contents of .../third-party/expat/lib are:
 
 
-
-	amigaconfig.h
 
 	ascii.h
 
 	asciitab.h
 
-	expat.dsp
-
 	expat.h
 
-	expatw.dsp
-
-	expatw_static.dsp
-
 	expat_external.h
-
-	expat_static.dsp
 
 	iasciitab.h
 
@@ -44,15 +34,15 @@ For Expat version 2.4.7 the contents of .../third-party/expat/lib are:
 
 	latin1tab.h
 
-	libexpat.def
-
-	libexpatw.def
+	libexpat.def.cmake
 
 	macconfig.h
 
-	Makefile.MPW
+	Makefile.am
 
 	nametab.h
+
+	siphash.h
 
 	utf8tab.h
 
